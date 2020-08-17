@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<table>
+    <caption th:if="${locale} == 'en'" th:text="CARS"/>
+    <caption th:if="${locale} == 'ru'" th:text="МАШИНЫ"/>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Series</th>
+    </tr>
+    <tr th:each="car: ${cars}">
+        <td th:text="${car.getId()}"/>
+        <td th:text="${car.getName()}"/>
+        <td th:text="${car.getSeries()}"/>
+    </tr>
+
+</table>
+</body>
+</html>
